@@ -167,7 +167,7 @@ export const EmailListView: React.FC<EmailListViewProps> = ({
                 {/* Sender */}
                 <div className="w-1/4 pr-2 truncate flex items-center gap-2">
                   {email.phishing_risk === 'High' || email.phishing_risk === 'Critical' ? (
-                    <AlertTriangle className="w-4 h-4 text-rose-500 shrink-0" title="High Phishing Risk Detected" />
+                    <AlertTriangle className="w-4 h-4 text-rose-500 shrink-0" aria-label="High Phishing Risk Detected" />
                   ) : email.is_starred ? (
                     <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400 shrink-0" />
                   ) : null}

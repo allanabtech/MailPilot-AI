@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./mailpilot.db
+      - USE_MOCK_DATA=True
+      - SECRET_KEY=mailpilot-ai-super-secret-key-production
+    volumes:
+      - mailpilot_data:/app/data
+
+volumes:
+  mailpilot_data:
